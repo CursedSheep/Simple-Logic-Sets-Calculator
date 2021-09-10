@@ -37,14 +37,13 @@ class EvaluateLogic {
       Operator = _Operator;
       Operand = _Operand;
     }
-    public override string ToString() {
-      if (Operator == LogicalOperator.LdBool)
-        return $ "{Operator},{Operand ?? "
-      "}";
-      else
-        return $ "{stringOperators[Operator]},{Operand ?? "
-      "}";
-    }
+	  public override string ToString()
+	  {
+		  if (Operator == LogicalOperator.LdBool)
+			  return $"{Operator},{Operand ?? ""}";
+		  else
+			  return $"{stringOperators[Operator]},{Operand ?? ""}";
+	  }
     static Dictionary < LogicalOperator, string > stringOperators = new Dictionary < LogicalOperator, string > () {
 
       {
