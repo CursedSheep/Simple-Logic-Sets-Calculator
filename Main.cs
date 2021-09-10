@@ -105,14 +105,6 @@ class EvaluateLogic {
         if (!tmpOperator.ContainsKey(parenthesisCount))
           tmpOperator[parenthesisCount] = new Stack < LogicInstructions > ();
         tmpOperator[parenthesisCount].Push(instruction);
-        /*if (LogicalOperators[currstr] != LogicalOperator.Negation)
-        {
-
-        }
-        else
-        {
-            result.Add(instruction);
-        }*/
         sb.Clear();
       } else if (currstr.All(x => char.IsLetter(x)) && data.ContainsKey(currstr)) {
         var selectedData = data[currstr];
@@ -142,12 +134,6 @@ class EvaluateLogic {
           result.Add(item.Value.Pop());
       }
     }
-    /*StringBuilder sb2 = new StringBuilder();
-    foreach(var item in result)
-    {
-        sb2.Append(item.ToString() + Environment.NewLine);
-    }
-    System.IO.File.WriteAllText("ppppp.txt", sb2.ToString());*/
     return result.ToArray();
   }
   private static bool GetBiConditional(bool o1, bool o2) {
