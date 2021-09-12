@@ -197,7 +197,7 @@ class EvaluateLogic {
     return MachineStack.Pop();
   }
   public static bool EvaluateExpression(string s, Dictionary < string, bool > data) {
-    var test = ParseExpressions(s.Replace(" ", "").Replace("¬", "~"), data);
+    var test = ParseExpressions(s.Replace(" ", "").Replace("¬", "~").Replace("↔", "⟷").Replace("∼", "~"), data);
     return ExecuteInstructions(test);
   }
 }
